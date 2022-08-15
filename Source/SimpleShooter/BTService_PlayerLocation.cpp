@@ -16,6 +16,9 @@ void UBTService_PlayerLocation::TickNode(UBehaviorTreeComponent &OwnerComp, uint
     Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds);
 
     APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
-    if (!ensure(PlayerPawn != nullptr)) return;
-    OwnerComp.GetBlackboardComponent()->SetValueAsVector(GetSelectedBlackboardKey(), PlayerPawn->GetActorLocation());
+    if (PlayerPawn != nullptr)
+    {
+        OwnerComp.GetBlackboardComponent()->SetValueAsVector(GetSelectedBlackboardKey(), PlayerPawn->GetActorLocation());
+    }
+
 }
