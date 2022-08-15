@@ -66,7 +66,7 @@ float AShooterCharacter::TakeDamage(float Damage, struct FDamageEvent const& Dam
 	float DamageToApply = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
 	DamageToApply = FMath::Min(Health, DamageToApply);
 	Health -= DamageToApply;
-	UE_LOG(LogTemp, Warning, TEXT("Health left: %f"), Health);
+	//UE_LOG(LogTemp, Warning, TEXT("Health left: %f"), Health);
 
 	if (IsDead())
 	{
